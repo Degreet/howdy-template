@@ -46,6 +46,7 @@ header {
     box-shadow: 0 0 19px 2px rgba(0,0,0,.91);
     position: relative;
     z-index: 100;
+    display: flex;
 }
 
 .logo {
@@ -54,6 +55,8 @@ header {
 
 .middle {
     display: flex;
+    width: 1400px;
+    margin: auto;
 }
 
 .sidebar {
@@ -71,23 +74,32 @@ header {
     padding: 88px 50px 50px 65px;
 }
 
-.main h1 {
+.main h2 {
     display: inline-block;
     color: #d1d1d1;
     font-weight: 700;
     font-size: 23px;
     text-transform: uppercase;
+    position: relative;
 }
 
-/*.main h1:before {
+.main h2::before {
     content: "";
     position: absolute;
-    left: 0px;
-    bottom: 445px;
+    left: 0;
+    bottom: -5px;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, rgb(255, 138, 0), rgb(218, 27, 96));
-}*/
+    background-color: #ff8a00;
+    background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#da1b60));
+    background: -o-linear-gradient(left,#ff8a00,#da1b60);
+    background: linear-gradient(to right,#ff8a00,#da1b60);
+}
+
+header .container h1 {
+    text-transform: uppercase;
+    color: #fff;
+}
 
 .footer {
     background: yellow;
@@ -192,6 +204,10 @@ header {
         order: 1;
     }
 
+    .post {
+        width: 1100px;
+    }
+
     .main {
         order: 2;
     }
@@ -200,7 +216,33 @@ header {
         width: 370px;
     }
 
+    .middle {
+        width: 2000px;
+    }
+
     .burger {
         display: unset;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .post {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .post {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .post img {
+        width: 100vw;
+    }
+
+    .main {
+        padding: 0;
+        width: 100vw;
     }
 }
