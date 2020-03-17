@@ -51,6 +51,8 @@ header {
 
 .logo {
     width: 57px;
+    height: 67px;
+    margin: 10px 15px 15px 21px;
 }
 
 .middle {
@@ -96,9 +98,12 @@ header {
     background: linear-gradient(to right,#ff8a00,#da1b60);
 }
 
-header .container h1 {
+header h1 {
     text-transform: uppercase;
     color: #fff;
+    margin-top: 23px;
+    font-size: 20px;
+    letter-spacing: 0.1px;
 }
 
 .footer {
