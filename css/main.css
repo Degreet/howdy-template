@@ -3,13 +3,14 @@ body {
     margin: 0;
     padding: 0;
     background: #14171A;
+    letter-spacing: -.25px;
 }
 
 a {
     text-decoration: none;
 }
 
-button {
+button, input {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -49,7 +50,7 @@ header {
     display: flex;
 }
 
-header div {
+header .title {
     flex-direction: column;
 }
 
@@ -126,6 +127,96 @@ header h2 {
     letter-spacing: .1px;
     margin-top: 2px;
     letter-spacing: -.01px;
+}
+
+header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #c6c6c6;
+    font-weight: 700;
+    transition: .2s color;
+}
+
+header ul li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: .4s -webkit-transform;
+    transition: .4s transform;
+    transform-origin: 100% 0;
+    background: #8ac832;
+    opacity: .9;
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+    z-index: 333;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header ul li a:hover {
+    color: #8ac832;
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+    margin: 34px 0 0 15px;
+}
+
+header ul li {
+    margin-right: 15px;
+    position: relative;
+}
+
+header .search button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    right: 10px;
+}
+
+header .search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 66px;
+}
+
+header .search button::before {
+    content: "";
+    background-image: url(/img/search.svg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    opacity: .3;
+    background-position: center;
+}
+
+header .search input {
+    width: 442px;
+    height: 38px;
+    font-size: 16px;
+    background-color: #0f1012;
+    border: 1px solid rgba(6,6,6,.99);
+    box-shadow: inset 0 0 5px 1px rgba(0,0,0,.6);
+    color: #d1d1d1;
+    padding: 0 45px 0 10px;
+    box-sizing: border-box;
 }
 
 .footer {
