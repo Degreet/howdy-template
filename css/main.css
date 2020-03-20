@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     margin: 0;
     padding: 0;
-    background: #14171A;
+    background: #131619;
     letter-spacing: -.25px;
 }
 
@@ -58,6 +58,11 @@ header .title {
     width: 57px;
     height: 67px;
     margin: 9px 17px 15px 19px;
+    transition: all 1s ease;
+}
+
+.logo:hover {
+    opacity: 0.7;
 }
 
 .middle {
@@ -74,7 +79,7 @@ header .title {
 }
 
 .main {
-    background: #131619;
+    /* background: url(../img/decor.png); */
     /* width: 500px; */
     height: 2000px;
     flex: 1;
@@ -246,7 +251,7 @@ header .search input {
     background-color: #080C0F;
     display: flex;
     margin-bottom: 20px;
-    width: 970px;
+    width: 900px;
     box-sizing: border-box;
 }
 
