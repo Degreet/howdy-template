@@ -76,6 +76,118 @@ header .title {
     width: 332px;
     height: 2000px;
     transition: all 0.5s ease;
+    margin-right: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .counters {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 10px;
+}
+
+.sidebar .counters .counter {
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+}
+
+.sidebar .pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 17px 0 0 15px;
+    opacity: 0.7;
+    position: relative;
+}
+
+.sidebar .pulse.green-bg {
+    box-shadow: 0 0 4px 1px #00BF08;
+}
+
+.sidebar .pulse.orange-bg {
+    box-shadow: 0 0 4px 1px #ff8130;
+}
+
+.sidebar .pulse.blue-bg {
+    box-shadow: 0 0 4px 1px #2c93c7;
+}
+
+.sidebar .counter:nth-child(2)::after {
+    content: "онлайн";
+}
+
+.sidebar .counter:nth-child(4)::after {
+    content: "файлов";
+}
+
+.sidebar .counter:nth-child(6)::after {
+    content: "скачиваний";
+}
+
+.sidebar .counter::after {
+    color: #535a60;
+    font-weight: normal;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    font-family: Roboto, sans-serif;
+}
+
+.sidebar .pulse::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    animation: ripple 2s infinite cubic-bezier(.65,0,.34,1);
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    border-radius: 50%;
+    z-index: -300;
+    border: 20px solid;
+}
+
+.sidebar .pulse.green-bg::after {
+    border-color: #00BF0844;
+}
+
+.sidebar .pulse.orange-bg::after {
+    border-color: #ff813044;
+}
+
+.sidebar .pulse.blue-bg::after {
+    border-color: #2c93c744;
+}
+
+.sidebar .upper {
+    margin-top: 45px;
+}
+
+.green-text {
+    color: #00BF08;
+}
+
+.orange-text {
+    color: #ff8130;
+}
+
+.blue-text {
+    color: #2c93c7;
+}
+
+.green-bg {
+    background-color: #00BF08;
+}
+
+.orange-bg {
+    background-color: #ff8130;
+}
+
+.blue-bg {
+    background-color: #2c93c7;
 }
 
 .main {
@@ -243,6 +355,25 @@ header .search input {
     border: none;
 }
 
+.burger::after, .burger::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    animation: ripple 3s infinite cubic-bezier(.65,0,.34,1);
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: -300;
+    border: 11px solid #fff5;
+}
+
+.burger::after {
+    animation-delay: 0.8s;
+}
+
 .burger img {
     width: 62px;
 }
@@ -330,11 +461,45 @@ header .search input {
     margin-bottom: 15px;
 }
 
+@keyframes ripple {
+    from {
+        opacity: 1;
+        -webkit-transform: scale3d(.75,.75,1);
+        transform: scale3d(.75,.75,1)
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(1.5,1.5,1);
+        transform: scale3d(1.5,1.5,1)
+    }
+}
+
+@keyframes radarWave {
+    0% {
+        opacity: .1;
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    5% {
+        background: rgba(0,191,8,.4);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        background: rgba(0,191,8,0)
+    }
+}
+
 @media screen and (max-width: 1350px) {
     .sidebar {
         /* display: none; */
         width: 0;
         order: 1;
+        margin-right: 0;
     }
 
     .post {
@@ -377,5 +542,13 @@ header .search input {
     .main {
         padding: 0;
         width: 100vw;
+    }
+
+    header .title, header .search {
+        display: none;
+    }
+
+    header ul li a {
+        font-size: 18px;
     }
 }
