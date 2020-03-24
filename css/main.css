@@ -521,6 +521,22 @@ header .search input {
     .burger {
         display: unset;
     }
+
+    .sidebar .upper .counters {
+        display: none;
+    }
+
+    .sidebar.active .upper .counters {
+        display: flex;
+    }
+
+    header .title, header .search {
+        display: none;
+    }
+
+    header ul li a {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -542,13 +558,5 @@ header .search input {
     .main {
         padding: 0;
         width: 100vw;
-    }
-
-    header .title, header .search {
-        display: none;
-    }
-
-    header ul li a {
-        font-size: 18px;
     }
 }
